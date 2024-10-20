@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     secure: false, // true for 465, false for other ports
     auth: {
       user: process.env.NEXT_PUBLIC_EMAIL_USER, // your email address
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS, // your email password or app-specific password
+      pass: "jnyq ekdy wqrz kyne", // your email password or app-specific password
     },
   });
 
