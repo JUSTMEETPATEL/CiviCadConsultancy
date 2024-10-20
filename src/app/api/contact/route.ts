@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     port: 587, // or 465 for SSL
     secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_USER, // your email address
+      user: "civcadconsultancy@gmail.com", // your email address
       pass: "jnyq ekdy wqrz kyne", // your email password or app-specific password
     },
   });
