@@ -20,27 +20,30 @@ export function ContactPage() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-
-    const formData = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    const form = e.target as HTMLFormElement & {
+        name: { value: string };
+        email: { value: string };
+        subject: { value: string };
+        message: { value: string };
     };
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify({
+            access_key: "6d908142-e09a-46d0-97d7-390db141f10b",
+            name: form.name.value,
+            email: form.email.value,
+            subject: form.subject.value,
+            message: form.message.value,
+        }),
     });
-
-    if (response.ok) {
-      setIsSubmitted(true);
-    } else {
-      console.error("Submission failed");
+    const result = await response.json();
+    if (result.success) {
+        console.log(result);
+        setIsSubmitted(true);
     }
   };
 
@@ -68,7 +71,7 @@ export function ContactPage() {
           </CardHeader>
           <CardContent>
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} action="" className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-gray-700">
                     Name
