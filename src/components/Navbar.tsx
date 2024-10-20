@@ -43,7 +43,7 @@ export default function Navbar() {
         </nav>
         <div className="hidden md:block">
           <Link
-            href="mailto:civicadconsultancy@gmail.com"
+            href="/contact"
             className="bg-white text-black px-3 py-1 md:px-4 md:py-2 mr-4 rounded-lg hover:text-lg transition-all duration-200"
           >
             Contact Us
