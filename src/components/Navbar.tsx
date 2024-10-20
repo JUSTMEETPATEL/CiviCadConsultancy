@@ -27,7 +27,7 @@ export default function Navbar() {
           </h1>
         </div>
         <nav className="hidden md:block space-x-4 lg:space-x-8">
-          {["Home", "About Civicad","Services", "Clients", "Projects"].map(
+          {["Home", "About Civicad","Services", "Projects"].map(
             (item) => (
               <Link
                 key={item}
