@@ -7,27 +7,27 @@ const Service = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {["Architectural Design", "Urban Planning", "Interior Design"].map(
-              (service) => (
-                <div
-                  key={service}
-                  className="bg-white p-6 rounded-lg shadow-md"
-                >
-                  <h3 className="text-2xl font-semibold mb-4">{service}</h3>
-                  <p className="text-gray-600 mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <a
-                    href="#"
-                    className="text-primary font-semibold hover:underline"
-                  >
-                    Learn more
-                  </a>
-                </div>
-              )
-            )}
+            {[
+              {
+                name: "Architectural Design",
+                content:"Our architectural design services focus on creating innovative, functional, and aesthetically pleasing structures. We work closely with our clients to transform their vision into reality, ensuring each design meets their unique needs and aligns with modern architectural standards."
+              },
+              {
+                name: "Urban Planning",
+                content: "We provide comprehensive urban planning solutions that integrate sustainable design principles with community needs. Our goal is to create livable, dynamic urban environments that foster growth, connectivity, and a high quality of life for residents.",
+              },
+              {
+                name: "Interior Design",
+                content: "Our interior design services offer a blend of creativity and functionality to enhance your living or workspace. We focus on creating cohesive designs that reflect your style, optimize space, and elevate the overall ambiance of your interiors.",
+              },
+            ].map((service) => (
+              <div key={service.name} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-2xl font-semibold mb-4">{service.name}</h3>
+                <p className="text-gray-600 mb-4">
+                  {service.content}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
