@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect,useState } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
+
 
 const images = [
   '/1.png?height=300&width=400&text=Image+1',
@@ -61,10 +62,14 @@ export default function Projects() {
     }
   }
 
+
+
   return (
+
     <section className="w-full overflow-hidden bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold mb-24 text-center">Projects</h2>
+          
         <div className="relative">
           <div
             ref={stripRef}

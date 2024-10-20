@@ -1,11 +1,13 @@
 import About from "@/components/About";
-import { Clients } from "@/components/Client";
+// import { Clients } from "@/components/Client";
 import { Footer } from "@/components/Footer";
 import HomeComponent from "@/components/Home";
 import Navbar from "@/components/Navbar";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 import Service from "@/components/Service";
+import { LayoutGrid } from "@/components/ui/layout-grid";
 import { Separator } from "@/components/ui/separator";
+import { cards } from "@/data/constants";
 
 export default function Home() {
   return (
@@ -22,15 +24,19 @@ export default function Home() {
       <section id="services">
         <Service />
       </section>
-      <section id="clients">
+      {/* <section id="clients">
         <Separator className="my-10" />
         <Clients />
-      </section>
-      <section id="projects">
+      </section> */}
+      <section id="projects" className="h-screen py-20 w-full">
         <Separator className="my-20" />
-        <Projects />
+        {/* <Projects /> */}
+        <div>
+          <h2 className="text-5xl font-bold mb-24 text-center">Projects</h2>
+        </div>
+        <LayoutGrid cards={cards} />
       </section>
-      <section>
+      <section className="pt-32">
         <Separator className="my-20" />
         <Footer />
       </section>
