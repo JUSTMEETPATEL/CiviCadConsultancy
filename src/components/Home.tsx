@@ -11,7 +11,7 @@ const Home = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
       className="relative h-screen border-b-2 border-black overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://civicad.in/images/sergey-leont-ev-xgnVtowBZ0c-unsplash.jpg')" }} />
+        style={{ backgroundImage: "url('/Background.jpg')" }} />
       <div
         className="absolute inset-0 bg-gradient-to-b from-black/75 to-transparent">
         <div className="flex flex-col items-end justify-center h-full pr-4 md:pr-24">
