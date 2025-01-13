@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Home, Ruler, MessageCircle, House, Store } from "lucide-react";
 import Testimonial from "../Tetimonial";
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -22,19 +23,18 @@ export default function HomePage() {
             inspiring spaces.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button
-              size="lg"
-              className="bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto"
+            <Link
+              href='/get-started'
+              className={`${buttonVariants({size:"lg"})}bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto`}
             >
               Start your project →
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-[#7E998D] text-[#7E998D] hover:bg-[#EEEEEE] w-full sm:w-auto"
+            </Link>
+            <Link
+              href="/projects"
+              className={`${buttonVariants({size:"lg"})}bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto`}
             >
               <span className="text-black">View our Work</span>
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
