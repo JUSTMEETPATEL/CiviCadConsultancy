@@ -1,9 +1,10 @@
+"use client" //only for the button use the client side rendering change it later
+
 import Image from "next/image";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Home, Ruler, MessageCircle, House, Store } from "lucide-react";
 import Testimonial from "../Tetimonial";
-import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -12,7 +13,7 @@ export default function HomePage() {
       <section className="container px-4 pt-8 md:pt-24 pb-8 md:pb-16">
         <div className="max-w-3xl space-y-4 md:space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="bg-gradient-to-r from-[#2A332F] via-[#FFFFFF] to-[#4B5563] text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-[#2A332F] to-[#4B5563] text-transparent bg-clip-text">
               Designing{" "}
             </span>
             <span className="block text-[#4B5563]">tomorrow&apos;s spaces</span>
@@ -23,18 +24,20 @@ export default function HomePage() {
             inspiring spaces.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link
-              href='/get-started'
-              className={`${buttonVariants({size:"lg"})}bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto`}
+            <Button
+              onClick={() => window.location.href = "/get-started"}
+              size = "lg"
+              className="bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto"
             >
               Start your project →
-            </Link>
-            <Link
-              href="/projects"
-              className={`${buttonVariants({size:"lg"})}bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto`}
+            </Button>
+            <Button
+              onClick={() => window.location.href = "/projects"}
+              size="lg"
+              className="bg-[#2A332F] hover:bg-[#94ADA3] text-white w-full sm:w-auto"
             >
-              <span className="text-black">View our Work</span>
-            </Link>
+              <span className="text-white">View our Work</span>
+            </Button>
           </div>
         </div>
       </section>
@@ -176,7 +179,7 @@ export default function HomePage() {
       <section className="container px-4 py-8 md:py-16 relative">
         <div className="relative rounded-2xl overflow-hidden">
           <div className="absolute right-4 sm:right-8 top-8 z-20">
-            <Card className="bg-white/90 backdrop-blur-sm p-3 md:p-4 flex items-center gap-2 md:gap-3">
+            <Card onClick={() => window.location.href = "/active-work"} className="bg-white/90 hover:cursor-pointer backdrop-blur-sm p-3 md:p-4 flex items-center gap-2 md:gap-3">
               <div className="rounded-full bg-[#7E998D]/10 p-2">
                 <House size={24} stroke="#7E998D" />
               </div>
@@ -187,7 +190,7 @@ export default function HomePage() {
             </Card>
           </div>
           <div className="absolute left-0 sm:-left-4 bottom-8 z-20">
-            <Card className="bg-white/90 backdrop-blur-sm p-3 md:p-4 ml-4 sm:ml-10 flex items-center gap-2 md:gap-3">
+            <Card onClick={() => window.location.href = "/projects"} className="bg-white/90 hover:cursor-pointer backdrop-blur-sm p-3 md:p-4 ml-4 sm:ml-10 flex items-center gap-2 md:gap-3">
               <div className="rounded-full bg-[#7E998D]/10 p-2">
                 <Store size={24} stroke="#7E998D" />
               </div>

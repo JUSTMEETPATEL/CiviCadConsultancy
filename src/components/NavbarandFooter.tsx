@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { X, Menu, Instagram, Linkedin, Facebook } from "lucide-react";
+import { X, Menu, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 // Navbar Component
@@ -138,15 +138,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-medium">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:opacity-80">
+              <Link href="https://www.instagram.com/civicadconsultancy/" target="_blank" className="hover:opacity-80">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:opacity-80">
+              </Link>
+              <Link href="https://www.linkedin.com/company/civicad/" target="_blank" className="hover:opacity-80">
                 <Linkedin size={20} />
-              </a>
-              <a href="#" className="hover:opacity-80">
-                <Facebook size={20} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
